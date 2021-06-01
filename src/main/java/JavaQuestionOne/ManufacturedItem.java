@@ -1,6 +1,6 @@
 package JavaQuestionOne;
 
-public class ManufacturedItem extends Item implements Tax_FinalAmount{
+public class ManufacturedItem extends Item implements taxFinalAmount {
 
     public ManufacturedItem(String name, Integer quantity, double price, String itemType) {
         super(name,quantity,price,itemType);

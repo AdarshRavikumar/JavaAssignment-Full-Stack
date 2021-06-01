@@ -1,6 +1,6 @@
 package JavaQuestionOne;
 
-public class ImportedItem extends Item implements Tax_FinalAmount{
+public class ImportedItem extends Item implements taxFinalAmount {
 
     public ImportedItem(String name, int quantity, double price, String itemType) {
         super(name,quantity,price,itemType);
@@ -9,9 +9,9 @@ public class ImportedItem extends Item implements Tax_FinalAmount{
     public double calculateTax(double price) {
         double importDuty = Constants.rawItemTax * price;
         double surcharge =0.0;
-        if(price+importDuty <= 100)
+        if(price+importDuty <= Constants.oneHundred)
             surcharge = 5.0;
-        else if (price+importDuty >100 && price+importDuty <=200)
+        else if (price+importDuty >Constants.oneHundred && price+importDuty <=Constants.twoHundred)
             surcharge = 10.0;
         else
             surcharge= (Constants.importedTax*(importDuty+price));

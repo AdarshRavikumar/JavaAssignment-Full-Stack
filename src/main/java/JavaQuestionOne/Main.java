@@ -2,6 +2,7 @@ package JavaQuestionOne;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
@@ -15,7 +16,7 @@ public class Main {
             Double price = null;
             String type = null;
 
-            HashMap<String, String> arguments = createMap(args);
+            Map<String, String> arguments = createMap(args);
 
             // Fetch name
             if (fetchNameFromInput(arguments)) {
@@ -99,8 +100,8 @@ public class Main {
         }
     }
 
-    public boolean fetchNameFromInput(HashMap<String, String> arguments) {
-        String val = arguments.get("-name");
+    public boolean fetchNameFromInput(Map<String, String> arguments) {
+        String val = arguments.get(Constants.name);
         if (val != null ) {
             if (!val.trim().isEmpty()) {
                 return true;
@@ -109,8 +110,8 @@ public class Main {
             return false;
     }
 
-    public boolean fetchQuantityFromInput(HashMap<String, String> arguments) {
-        String val = arguments.get("-quantity");
+    public boolean fetchQuantityFromInput(Map<String, String> arguments) {
+        String val = arguments.get(Constants.quantity);
         if (val != null ) {
             if (!val.trim().isEmpty()) {
                 return true;
@@ -119,8 +120,8 @@ public class Main {
         return false;
     }
 
-    public boolean fetchTypeFromInput(HashMap<String, String> arguments) {
-        String val = arguments.get("-type");
+    public boolean fetchTypeFromInput(Map<String, String> arguments) {
+        String val = arguments.get(Constants.type);
         if (val != null ) {
             if (!val.trim().isEmpty()) {
                 return true;
@@ -130,8 +131,8 @@ public class Main {
 
     }
 
-    public boolean fetchPriceFromInput(HashMap<String, String> arguments) {
-        String val = arguments.get("-price");
+    public boolean fetchPriceFromInput(Map<String, String> arguments) {
+        String val = arguments.get(Constants.price);
         if (val != null ) {
             if (!val.trim().isEmpty()) {
                 return true;
@@ -140,8 +141,8 @@ public class Main {
         return false;
     }
 
-    public HashMap<String, String> createMap(String[] args) {
-        HashMap<String, String> arguments = new HashMap<String, String>();
+    public Map<String, String> createMap(String[] args) {
+       Map<String, String> arguments = new HashMap<String, String>();
         for (int counter = 0; counter < args.length - 1; counter += 2) {
             arguments.put(args[counter], args[counter + 1]);
         }
@@ -162,7 +163,6 @@ public class Main {
             mainObj.fetchCLArgValues(args, obj, mainObj );
         }catch(Exception e) {
             mainObj.printDetails(obj);
-            System.out.println(e);
         }
     }
 }

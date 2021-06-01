@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 import static org.junit.Assert.*;
@@ -19,7 +20,7 @@ public class MainTest extends Main {
     public void testFetchNameFromInput() {
         System.out.println("Enter Input");
         String[] args = "-name iPhone -type imported -quantity 1 -price 60000".split(" ");
-        HashMap<String, String> map =  createMap(args);
+      Map<String, String> map =  createMap(args);
         assertTrue(fetchNameFromInput(map));
 
         args = "-type imported -quantity 1 -price 60000".split(" ");
@@ -31,7 +32,7 @@ public class MainTest extends Main {
     @Test
     public void testFetchQuantityFromInput() {
         String[] args = "-name iPhone -type manufactured -quantity 1 -price 60000".split(" ");
-        HashMap<String, String> map =  createMap(args);
+        Map<String, String> map =  createMap(args);
         assertTrue(fetchQuantityFromInput(map));
 
         args = "-name iPhone -type manufactured -price 60000".split(" ");
@@ -43,7 +44,7 @@ public class MainTest extends Main {
     public void testFetchTypeFromInput() {
         System.out.println("Enter Input");
         String[] args = "-name iPhone -type raw -quantity 1 -price 60000".split(" ");
-        HashMap<String, String> map =  createMap(args);
+        Map<String, String> map =  createMap(args);
         assertTrue(fetchTypeFromInput(map));
 
         args = "-name iPhone -quantity 1 -price 60000".split(" ");
@@ -55,7 +56,7 @@ public class MainTest extends Main {
     public void testFetchPriceFromInput() {
         System.out.println("Enter Input");
         String[] args = "-name iPhone -type raw -quantity 1 -price 60000".split(" ");
-        HashMap<String, String> map =  createMap(args);
+        Map<String, String> map =  createMap(args);
         assertTrue(fetchPriceFromInput(map));
 
         args = "-name iPhone -type raw -quantity 1".split(" ");

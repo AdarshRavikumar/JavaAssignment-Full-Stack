@@ -1,6 +1,6 @@
 package JavaQuestionOne;
 
-public class RawItem extends Item implements Tax_FinalAmount{
+public class RawItem extends Item implements taxFinalAmount {
 
     public RawItem(String name, Integer quantity, double price, String itemType) {
         super(name,quantity,price,itemType);
