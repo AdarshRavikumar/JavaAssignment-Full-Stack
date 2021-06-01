@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'checkstyle'
 }
 
 group 'org.example'
@@ -16,6 +17,8 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:4.11.0'
 }
 
-test {
-    useJUnitPlatform()
+apply plugin: 'checkstyle'
+checkstyle {
+    project.ext.checkstyleVersion = '8.20'
+    configFile = file("config/checkstyle.xml")
 }
