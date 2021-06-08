@@ -1,4 +1,4 @@
-
+package JavaQuestionOneTest;
 
 import JavaQuestionOne.ManufacturedItem;
 import org.junit.Before;

@@ -1,12 +1,10 @@
-
+package JavaQuestionOneTest;
 
 import JavaQuestionOne.Main;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.HashMap;
 import java.util.Map;
-import java.util.Scanner;
 
 import static org.junit.Assert.*;
 
